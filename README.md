@@ -1,16 +1,20 @@
 # halalbee
 
-HalalBee locates restaurents near you that meets your halal needs
+HalalBee locates restaurants near you that meets your halal needs
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Project Directory - assests
 
-A few resources to get you started if this is your first Flutter project:
+Adding all images for the project
+- images/bg.jpg - Home screen logo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Project Directory - lib
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# pages
+Contains all the user visible pages
+
+# services
+All database connections along with APIs
+
+# widgets
+Custom Widgets coded
