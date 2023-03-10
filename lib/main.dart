@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:halalbee/pages/home.dart';
+import 'package:halalbee/pages/login.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:loader_overlay/loader_overlay.dart';
+import 'firebase_options.dart';
 
 // main.dart is always the file that executed first
 
 // Main application launch function
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 // MyApp launch and setting the theme for project
@@ -15,12 +22,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+    return const MaterialApp(
       // setting Home page
-      home: const Home(),
+      home: LoaderOverlay(child: Login()),
     );
   }
 }

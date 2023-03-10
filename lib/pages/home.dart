@@ -1,5 +1,7 @@
 import 'package:expandable/expandable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:halalbee/pages/login.dart';
 
 // Defining Home as Stateful Widget
 class Home extends StatefulWidget {
@@ -119,6 +121,8 @@ class _HomeState extends State<Home> {
                     ElevatedButton(
                       onPressed: () {
                         //TODO: Add search code and redirect to next page
+                        FirebaseAuth.instance.signOut();
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const Login()), (route) => false);
                       },
                       style: ElevatedButton.styleFrom(backgroundColor: Colors.amberAccent,foregroundColor: Colors.black),
                       child: const Padding(padding:EdgeInsets.fromLTRB(20,4,20,4),child:Text("Find halal food near me")),
